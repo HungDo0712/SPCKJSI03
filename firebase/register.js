@@ -11,6 +11,7 @@ const handleRegister = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             alert(user.email);
+            window.location = './login.html'
         })
         .catch((error) => {
             const errorCode = error.code;
