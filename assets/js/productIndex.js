@@ -2,7 +2,7 @@ let Productlist = [];
 
 
 const getProductlist =() => {
-    fetch("https://6534d05ae1b6f4c59046f25a.mockapi.io/DanhMucGame").then((res) => {
+    fetch("https://6534d05ae1b6f4c59046f25a.mockapi.io/Index").then((res) => {
         return res.json()
     }).then((res) => {
         Productlist = res;
@@ -16,8 +16,8 @@ const wrapperElm = document.getElementById('wrapper-products');
 const renderProductList = () => {
     Productlist.forEach((product) => {
         let productItem = productTemplate.content.cloneNode(true);
-        productItem.getElementById('product-img').src = product.avatar;
-        productItem.getElementById('product-price').textContent = product.Price;
+        productItem.getElementById('product-img').src = product.img;
+        productItem.getElementById('product-price').textContent = product.price;
         let genreText = "";
         product.genre.forEach((item) => {
             genreText = genreText + item + ",";
