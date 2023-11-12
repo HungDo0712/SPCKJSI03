@@ -1,8 +1,9 @@
+//Trending Game
 let Productlist = [];
 
 
 const getProductlist =() => {
-    fetch("https://6534d05ae1b6f4c59046f25a.mockapi.io/DanhMucGame").then((res) => {
+    fetch("https://6534d05ae1b6f4c59046f25a.mockapi.io/DanhMucGame?page=1&limit=4").then((res) => {
         return res.json()
     }).then((res) => {
         Productlist = res;
@@ -10,9 +11,9 @@ const getProductlist =() => {
     })
     
 }
-const productTemplate = document.getElementById('product-item');
-const wrapperElm = document.getElementById('wrapper-products');
 
+const productTemplate = document.getElementById('product-item1');
+const wrapperElm = document.getElementById('wrapper-products1');
 
 const renderProductList = () => {
     Productlist.forEach((product) => {
